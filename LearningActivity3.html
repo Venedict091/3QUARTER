@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <style>
+            body{
+
+               background-image: url(a.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Grading Program</title>
+    <style>
+    body {
+     font-family: Arial, sans-serif;
+     text-align: center;
+  }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 250px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 60px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2d3237;
+            color: #f6eded;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4d5257;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <div>
+        <label for="grade1">Statics and probility</label>
+        <input type="number" id="grade1" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade2">Reading and Writing</label>
+        <input type="number" id="grade2" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade3">Practical Research 1</label>
+        <input type="number" id="grade3" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade4">Physical Science</label>
+        <input type="number" id="grade4" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade5">Entrepreneurship</label>
+        <input type="number" id="grade5" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade6">Computer Programing</label>
+        <input type="number" id="grade6" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade7">Media and Information Literacy</label>
+        <input type="number" id="grade7" min="0" max="100">
+    </div>
+    <div>
+        <label for="grade8">Pananaliksik</label>
+        <input type="number" id="grade8" min="0" max="100">
+    </div>
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateAverage() {
+            var totalGrades = 0;
+            var totalScore = 0;
+
+            for (var i = 1; i <= 8; i++) {
+                var grade = parseFloat(document.getElementById('grade' + i).value);
+                if (!isNaN(grade)) {
+                    totalGrades++;
+                    totalScore += grade;
+                }
+            }
+
+            if (totalGrades === 0) {
+                document.getElementById('result').innerHTML = "Please enter at least one grade.";
+            } else {
+                var average = totalScore / totalGrades;
+                document.getElementById('result').innerHTML = "General Average: " + average.toFixed(2);
+            }
+
+            if (average >= 98) {
+                    document.getElementById('result').innerHTML += "<br>Highest Honors";
+                } else if (average >= 95) {
+                    document.getElementById('result').innerHTML += "<br>High Honors";
+                } else if (average >= 90) {
+                    document.getElementById('result').innerHTML += "<br>Excellent";
+                } else if (average >= 75) {
+                    document.getElementById('result').innerHTML += "<br>Passed";
+                } else {
+                    document.getElementById('result').innerHTML += "<br>Failed";
+                }
+        }
+    </script>
+</body>
+</html>

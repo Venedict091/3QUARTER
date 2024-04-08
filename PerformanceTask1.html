@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url(a.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+            height: 120vh;
+        }
+        img{
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .container{
+            margin: auto;
+            background-color: white;
+            display: block;
+            width: 400px;
+            border: solid black 2px;
+            padding: 20px;
+
+        }
+        button{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding: 5px;
+            display: flex;
+            padding: 10px;
+        }
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+<body>
+    <h1>Click on the Human Face Parts</h1>
+
+   <div class="container"> 
+      <img id="open eyes.png" src="close eye.png" style="width:300px">
+      <button class="blue" onclick="document.getElementById('open eyes.png').src='open eyes.png'">Open</button><br>
+      <button class="red" onclick="document.getElementById('open eyes.png').src='close eye.png'">Close</button>
+    </div> 
+</body>
+</html>
